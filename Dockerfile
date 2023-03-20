@@ -64,6 +64,7 @@ RUN useradd -ms /bin/bash frappe \
 
 COPY resources/nginx-template.conf /templates/nginx/frappe.conf.template
 COPY resources/nginx-entrypoint.sh /usr/local/bin/nginx-entrypoint.sh
+RUN ["chmod", "+x", "/usr/local/bin/nginx-entrypoint.sh"]
 
 FROM base AS builder
 
@@ -139,4 +140,7 @@ CMD [ \
 
 COPY data/erpnext/ /home/frappe/frappe-bench/apps/erpnext/
 COPY data/frappe/ /home/frappe/frappe-bench/apps/frappe/
-RUN chmod 755 /usr/local/bin/nginx-entrypoint.sh
+##RUN chmod 755 -R  /usr/local/bin/nginx-entrypoint.sh
+###RUN chmod +x /usr/local/bin/nginx-entrypoint.sh
+#RUN ["chmod", "+x", "/usr/local/bin/nginx-entrypoint.sh"]
+#RUN ["chmod", "+x", "/usr/local/bin/nginx-entrypoint.sh"]
