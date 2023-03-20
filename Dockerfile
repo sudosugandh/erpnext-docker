@@ -140,7 +140,3 @@ CMD [ \
 
 COPY data/erpnext/ /home/frappe/frappe-bench/apps/erpnext/
 COPY data/frappe/ /home/frappe/frappe-bench/apps/frappe/
-##RUN chmod 755 -R  /usr/local/bin/nginx-entrypoint.sh
-###RUN chmod +x /usr/local/bin/nginx-entrypoint.sh
-#RUN ["chmod", "+x", "/usr/local/bin/nginx-entrypoint.sh"]
-#RUN ["chmod", "+x", "/usr/local/bin/nginx-entrypoint.sh"]
