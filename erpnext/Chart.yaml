@@ -1,0 +1,31 @@
+apiVersion: v2
+name: erpnext
+description: Kubernetes Helm Chart for the latest stable ERPNext branch
+icon: https://raw.githubusercontent.com/frappe/erpnext/develop/erpnext/public/images/erpnext-logo.png
+type: application
+version: 6.0.15
+appVersion: v14.18.2
+dependencies:
+- name: redis
+  condition: redis-cache.enabled
+  alias: redis-cache
+  version: "17.3.17"
+  repository: https://charts.bitnami.com/bitnami
+- name: redis
+  condition: redis-queue.enabled
+  alias: redis-queue
+  version: "17.3.17"
+  repository: https://charts.bitnami.com/bitnami
+- name: redis
+  condition: redis-socketio.enabled
+  alias: redis-socketio
+  version: "17.3.17"
+  repository: https://charts.bitnami.com/bitnami
+- name: mariadb
+  condition: mariadb.enabled
+  version: "11.4.2"
+  repository: https://charts.bitnami.com/bitnami
+- name: postgresql
+  condition: postgresql.enabled
+  version: "12.1.6"
+  repository: https://charts.bitnami.com/bitnami
