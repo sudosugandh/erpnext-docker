@@ -21,4 +21,15 @@ links:
 Express dependency between services, which has two effects:
 1 docker-compose up will start services in dependency order. In the following example, mariadb and redis will be started before frappe.
 2 docker-compose up SERVICE will automatically include SERVICE’s dependencies. In the following example, docker-compose up docker_frappe will also create and start mariadb and redis.
+Make sure your current directory is frappe_docker
+1 First time setup
+./dbench init-frappe
+./dbench init-erpnext(if you want to install the erpnext app)
+
+2 Command to be executed everytime after starting your containers
+./dbench setup hosts
+
+3 Command to enter your container
+./dbench
+
       
